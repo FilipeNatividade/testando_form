@@ -32,7 +32,7 @@ const Form = () => {
       .required("campo obrigatório"),
   });
 
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -42,7 +42,6 @@ const Form = () => {
 
   return (
     <div>
-      {errors.confirmasenha}
       <form onSubmit={handleSubmit(handleData)}>
         <input placeholder="Nome" name="name" type="text" ref={register} />
         <p />
